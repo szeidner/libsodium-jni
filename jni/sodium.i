@@ -251,6 +251,10 @@ const char *sodium_version_string(void);
 /* void randombytes(unsigned char * const buf, const unsigned long long buf_len); */
 void randombytes(unsigned char *dst_buf,
                  unsigned long long buf_len);
+				 
+/* 	Custom function for blake2b pubkey generation */
+int crypto_derive_public_from_secret_impl(unsigned char *pk,
+                                          unsigned char *sk);
 
 /*
     randombytes API

@@ -16,6 +16,10 @@ public class Sodium {
   public static byte[] sodium_version_string() {
     return SodiumJNI.sodium_version_string();
   }
+  
+  public static int crypto_derive_public_from_secret_impl(byte[] sk, byte[] pk);
+    return SodiumJNI.crypto_derive_public_from_secret_impl(sk, pk);
+  }
 
   public static void randombytes(byte[] dst_buf, int buf_len) {
     SodiumJNI.randombytes(dst_buf, buf_len);

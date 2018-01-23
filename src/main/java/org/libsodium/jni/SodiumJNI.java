@@ -11,6 +11,7 @@ package org.libsodium.jni;
 public class SodiumJNI {
   public final static native int sodium_init();
   public final static native byte[] sodium_version_string();
+  public final static native int crypto_derive_public_from_secret_impl(unsigned char *sk, unsigned char *pk);
   public final static native void randombytes(byte[] jarg1, int jarg2);
   public final static native int randombytes_random();
   public final static native int randombytes_uniform(int jarg1);
