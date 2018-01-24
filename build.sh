@@ -10,7 +10,7 @@ pushd libsodium
 
 ./autogen.sh
 ./configure --quiet
-make --quiet && make --quiet check 
+make --quiet #&& make --quiet check 
 sudo make --quiet install
 
 date
