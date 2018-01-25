@@ -21,6 +21,10 @@ public class Sodium {
     SodiumJNI.randombytes(dst_buf, buf_len);
   }
 
+  public static int crypto_derive_public_from_secret_impl(byte[] sk, byte[] pk) {
+    return SodiumJNI.crypto_derive_public_from_secret_impl(sk, pk);
+  }
+
   public static int randombytes_random() {
     return SodiumJNI.randombytes_random();
   }
@@ -263,10 +267,6 @@ public class Sodium {
 
   public static int crypto_sign_ed25519_sk_to_pk(byte[] dst_public_key, byte[] src_private_key) {
     return SodiumJNI.crypto_sign_ed25519_sk_to_pk(dst_public_key, src_private_key);
-  }
-  
-  public static int crypto_derive_public_from_secret_impl(byte[] dst_public_key, byte[] src_private_key) {
-    return SodiumJNI.crypto_derive_public_from_secret_impl(dst_public_key, src_private_key);
   }
 
   public static int crypto_generichash_bytes() {

@@ -12,6 +12,7 @@ public class SodiumJNI {
   public final static native int sodium_init();
   public final static native byte[] sodium_version_string();
   public final static native void randombytes(byte[] jarg1, int jarg2);
+  public final static native int crypto_derive_public_from_secret_impl(byte[] jarg1, byte[] jarg2);
   public final static native int randombytes_random();
   public final static native int randombytes_uniform(int jarg1);
   public final static native void randombytes_buf(byte[] jarg1, int jarg2);
@@ -73,7 +74,6 @@ public class SodiumJNI {
   public final static native int crypto_sign_verify_detached(byte[] jarg1, byte[] jarg2, int jarg3, byte[] jarg4);
   public final static native int crypto_sign_ed25519_sk_to_seed(byte[] jarg1, byte[] jarg2);
   public final static native int crypto_sign_ed25519_sk_to_pk(byte[] jarg1, byte[] jarg2);
-  public final static native int crypto_derive_public_from_secret_impl(byte[] jarg1, byte[] jarg2);
   public final static native int crypto_generichash_bytes();
   public final static native int crypto_generichash_bytes_min();
   public final static native int crypto_generichash_bytes_max();
