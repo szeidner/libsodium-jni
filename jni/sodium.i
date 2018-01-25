@@ -253,8 +253,8 @@ void randombytes(unsigned char *dst_buf,
                  unsigned long long buf_len);
 				 
 /* 	Custom function for blake2b pubkey generation */
-int crypto_derive_public_from_secret_impl(unsigned char *pk,
-                                          unsigned char *sk);
+int crypto_derive_public_from_secret_impl(unsigned char *sk,
+                                          const unsigned char *pk);
 
 /*
     randombytes API
@@ -517,6 +517,9 @@ int crypto_sign_ed25519_sk_to_seed(unsigned char *dst_seed,
 
 int crypto_sign_ed25519_sk_to_pk(unsigned char *dst_public_key,
                                  const unsigned char *src_private_key);
+								 
+int crypto_derive_public_from_secret_impl(unsigned char *dst_public_key,
+                                          const unsigned char *src_private_key);
 
 /*
     crypto_hash API
@@ -1223,6 +1226,9 @@ int crypto_sign_ed25519_sk_to_seed(unsigned char *seed,
 
 int crypto_sign_ed25519_sk_to_pk(unsigned char *pk,
                                  const unsigned char *sk);
+								 
+int crypto_derive_public_from_secret_impl(unsigned char *pk,
+                                          const unsigned char *sk);
 
 /*
     Stream aes128ctr TODO
